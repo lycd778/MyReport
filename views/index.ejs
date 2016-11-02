@@ -9,44 +9,19 @@
     <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="header"><h3><p class="navbar-text navbar-right text-center">我的报告</p></h3></div>
-<div class="list-group">
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-3 col-md-4">心肺评估</div>
-            <div class="col-xs-7 col-md-4">检查日期：2016-10-28</div>
-            <div class="col-xs-2 col-md-4">图片</div>
-        </div>
-    </a>
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-3 col-md-4">心电评估</div>
-            <div class="col-xs-7 col-md-4">检查日期：2016-10-28</div>
-            <div class="col-xs-2 col-md-4">图片</div>
-        </div>
-    </a>
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-3 col-md-4">尿常规</div>
-            <div class="col-xs-7 col-md-4">检查日期：2016-10-28</div>
-            <div class="col-xs-2 col-md-4">图片</div>
-        </div>
-    </a>
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-3 col-md-4">尿常规</div>
-            <div class="col-xs-7 col-md-4">检查日期：2016-10-28</div>
-            <div class="col-xs-2 col-md-4">图片</div>
-        </div>
-    </a>
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-3 col-md-4">尿常规</div>
-            <div class="col-xs-7 col-md-4">检查日期：2016-10-28</div>
-            <div class="col-xs-2 col-md-4">图片</div>
-        </div>
-    </a>
+<div id="header">
+    <h3><p class="navbar-text navbar-right text-center">我的报告</p></h3>
 </div>
-
+<div class="list-group">
+    <% for(var i = 0; i < person.length; i++) { %>
+    <a href="#" class="list-group-item">
+        <div class="row">
+            <div class="col-xs-3 col-md-4"><%= person[i].typename %></div>
+            <div class="col-xs-7 col-md-4">检查日期：<%= person[i].checkdatime %></div>
+            <div class="col-xs-2 col-md-4">类型：<%= person[i].typecode %></div>
+        </div>
+    </a>
+    <% } %>
+</div>
 </body>
 </html>
