@@ -14,11 +14,11 @@
 </div>
 <div class="list-group">
     <% for(var i = 0; i < person.length; i++) { %>
-    <a href="#" class="list-group-item">
+    <a href="/users/<%= person[i].userid %>" class="list-group-item">
         <div class="row">
             <div class="col-xs-3 col-md-4"><%= person[i].typename %></div>
-            <div class="col-xs-7 col-md-4">检查日期：<%= person[i].checkdatime %></div>
-            <div class="col-xs-2 col-md-4">类型：<%= person[i].typecode %></div>
+            <div class="col-xs-6 col-md-4">检查日期：<%= person[i].checkdatime %></div>
+            <div class="col-xs-3 col-md-4">类型：<%= person[i].typecode %></div>
         </div>
     </a>
     <% } %>
