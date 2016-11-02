@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table table-striped">
+    <tr>
+        <%for(var i in date[0]) {%>
+        <th><%=i %></th>
+        <%}%>
+    </tr>
+
+    <%for(var j= 0; j < date.length; j++) { %>
+    <tr>
+        <%for(var attribute in date[j]) {%>
+        <td><%= date[j][attribute] %></td>
+        <%}%>
+    </tr>
+    <%}%>
+
+</table>
+</body>
+</html>
