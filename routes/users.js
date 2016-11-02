@@ -30,7 +30,7 @@ router.get('/:userid', function (req, res1, next) {
             console.info('GET result:\n');
             process.stdout.write(d);
             var date = JSON.parse(d);
-            res1.send(date);
+            res1.render('lab',{title: '我的列表', date: date});
             console.info('\n\nCall completed');
         });
 
