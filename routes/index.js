@@ -1,43 +1,19 @@
 var express = require('express');
 var router = express.Router();
-
+var http = require('http');
+var request = require('request');
 /* GET home page. */
 
+router.get('/', function (req, res1, next) {
+    var url = 'http://123.57.143.76:8010/api/qq/Reportslist?openid=oPPfSww-UoP3AKLQ43-d07CmyrVU';
 
-router.get('/', function (req, res, next) {
-    var personStr = '[\
-        {\
-            "checkdatime" : "2016-10-26",\
-            "typename" :"心肺评估",\
-            "typecode" : "1",\
-            "userid":"9"\
-        },\
-        {\
-            "checkdatime" : "2016-11-01",\
-            "typename" : "心脏彩超",\
-            "typecode" : "1",\
-            "userid":"9"\
-        },\
-        {\
-            "checkdatime" : "2016-11-02",\
-            "typename" : "尿常规",\
-            "typecode" : "0",\
-            "userid":"9"\
-        },\
-       {\
-            "checkdatime" : "2016-11-03",\
-            "typename" : "血脂",\
-            "typecode" : "0",\
-            "userid":"9"\
-        },\
-        {\
-            "checkdatime" : "2016-09-11",\
-            "typename" : "血常规",\
-            "typecode" : "0",\
-            "userid":"9"\
-        }\
-    ]';
-    var persons = JSON.parse(personStr);
-    res.render('index', {title: '我的报告', person: persons});
+    request(url, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            list = null;
+            var date=JSON.parse(body);
+            list = date.results;
+            res1.render('index', {title: '我的报告', list: list});
+        }
+    });
 });
 module.exports = router;

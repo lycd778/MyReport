@@ -9,20 +9,20 @@
     <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-<table class="table table-striped">
+<table class="table table-bordered">
     <tr>
-        <%for(var i in date[0]) {%>
-        <th><%=i %></th>
-        <%}%>
+        <% for(var i in date[0]) { %>
+        <th><%= i %></th>
+        <% } %>
     </tr>
 
-    <%for(var j= 0; j < date.length; j++) { %>
+    <% for(var j = 0; j < date.length; j++) { %>
     <tr>
-        <%for(var attribute in date[j]) {%>
+        <% for(var attribute in date[j]) { %>
         <td><%= date[j][attribute] %></td>
-        <%}%>
+        <% } %>
     </tr>
-    <%}%>
+    <% } %>
 
 </table>
 </body>

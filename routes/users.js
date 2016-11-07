@@ -1,43 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var http = require('http');
-var querystring = require('querystring');
+var request = require('request');
 /* GET users listing. */
 /**
  * HOW TO Make an HTTP Call - GET
  */
 // options for GET
-router.get('/:userid', function (req, res1, next) {
-    var url='/intecup/getmwater.php?id='+req.params.userid;
-    var optionsget = {
-        host: '103.236.253.92',
-        port: 80,
-        path: url,
-        method: 'GET'
-    };
+router.get('/query', function (req, res1, next) {
 
-    console.info('Options prepared:');
-    console.info(optionsget);
-    console.info('Do the GET call');
-
-// do the GET request
-    var reqGet = http.request(optionsget, function (res) {
-        console.log("statusCode: ", res.statusCode);
-        // uncomment it for header details
-//	console.log("headers: ", res.headers);
-
-        res.on('data', function (d) {
-            console.info('GET result:\n');
-            process.stdout.write(d);
-            var date = JSON.parse(d);
+    var recorded=req.query.recorded;
+    var type=req.query.type;
+    var userid=req.query.userid;
+    var url='http://123.57.143.76:8010/api/qq/api/qq/Reportsdetial?recorded='+recorded&&type=&&userid=';
+    request(url, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var date = JSON.parse(body);
             res1.render('lab',{title: '我的列表', date: date});
-            console.info('\n\nCall completed');
-        });
-
-    });
-    reqGet.end();
-    reqGet.on('error', function (e) {
-        console.error(e);
+        }
     });
 
 });
