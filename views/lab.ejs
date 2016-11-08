@@ -11,18 +11,18 @@
 <body>
 <table class="table table-bordered">
     <tr>
-        <% for(var i in date[0]) { %>
+        <% for(var i in detial) { %>
         <th><%= i %></th>
         <% } %>
     </tr>
 
-    <% for(var j = 0; j < date.length; j++) { %>
+
     <tr>
-        <% for(var attribute in date[j]) { %>
-        <td><%= date[j][attribute] %></td>
+        <% for(var attribute in detial) { %>
+        <td><%= detial[attribute] %></td>
         <% } %>
     </tr>
-    <% } %>
+
 
 </table>
 </body>

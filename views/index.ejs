@@ -17,7 +17,7 @@
     <h3><p class="navbar-text navbar-right text-center">无报告</p></h3>
     <% }else{ %>
     <% for(var i = 0; i < list.length; i++) { %>
-    <a href="/users?recorded=<%= person[i].recorded %>&type="<%= person[i].type %>&userid=<%= person[i].userid %> class="list-group-item">
+    <a href="/lab?recorded=<%= list[i].ReportId %>&type=<%= list[i].type %>&userid=<%= list[i].userid %>" class="list-group-item">
         <div class="row">
             <div class="col-xs-3 col-md-4"><%= list[i].typename %></div>
             <div class="col-xs-6 col-md-4">检查日期：<%= list[i].checkdatime.substring(0,10) %></div>
