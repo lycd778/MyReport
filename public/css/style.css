@@ -5,3 +5,8 @@ body {
 a {
   color: #00B7FF;
 }
+hr{
+  height:1px;
+  border:none;
+  border-top:1px ridge #000000;
+}
