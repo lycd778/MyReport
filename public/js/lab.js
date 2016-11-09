@@ -11,14 +11,36 @@ function LabJsonFormatter(type, value) {
         });
         switch (type) {
             case "血常规":
-                html += "Hb:" + data.hb + "g/L " + labCcheck(type, "hb", data.hb) + ",RBC:" + data.rbc + "×10<sup>12</sup>/L " + labCcheck(type, "rbc", data.rbc) + ",WBC:" + data.wbc + "×10<sup>9</sup>/L " + labCcheck(type, "wbc", data.wbc) + ",L:" + data.l + "×10<sup>9</sup>/L " + labCcheck(type, "l", data.l) + ",N:" + data.n + "×10<sup>9</sup>/L " + labCcheck(type, "n", data.n) + ",PLT:" + data.plt + "×10<sup>9</sup>/L " + labCcheck(type, "plt", data.plt) + ",NEUT:" + data.NEUT + "% ";
+                //html += "Hb:" + data.hb + "g/L " + labCcheck(type, "hb", data.hb)
+                //    + ",RBC:" + data.rbc + "×10<sup>12</sup>/L " + labCcheck(type, "rbc", data.rbc)
+                //    + ",WBC:" + data.wbc + "×10<sup>9</sup>/L " + labCcheck(type, "wbc", data.wbc)
+                //    + ",L:" + data.l + "×10<sup>9</sup>/L " + labCcheck(type, "l", data.l)
+                //    + ",N:" + data.n + "×10<sup>9</sup>/L " + labCcheck(type, "n", data.n)
+                //    + ",PLT:" + data.plt + "×10<sup>9</sup>/L " + labCcheck(type, "plt", data.plt) +
+                //    ",NEUT:" + data.NEUT + "% ";
+                html+="<tr><td>Hb</td><td>"+data.hb +" g/L</td><td>"+labCcheck(type, 'hb', data.hb)+"</td></tr>"
+                    +"<tr><td>RBC</td><td>"+data.rbc +" ×10<sup>12</sup>/L</td><td>"+labCcheck(type, 'rbc', data.rbc)+"</td></tr>"
+                    +"<tr><td>WBC</td><td>"+data.wbc +"×10<sup>9</sup>/L </td><td>"+labCcheck(type, 'wbc', data.wbc)+"</td></tr>"
+                    +"<tr><td>L</td><td>"+data.l +"×10<sup>9</sup>/L </td><td>"+labCcheck(type, 'l', data.l)+"</td></tr>"
+                    +"<tr><td>N</td><td>"+data.n +"×10<sup>9</sup>/L </td><td>"+labCcheck(type, 'n', data.n)+"</td></tr>"
+                    +"<tr><td>PLT</td><td>"+data.plt +"×10<sup>9</sup>/L </td><td>"+labCcheck(type, 'plt', data.plt)+"</td></tr>"
+                    +"<tr><td>NEUT</td><td>"+data.NEUT +"% </td><td></td></tr>"
+                    +"</table>";
                 break;
             case "尿常规":
-                html += "Pro:" + data.pro + ",Glu:" + data.glu + ",镜检:" + data.jinjian + ",KET:" + data.KET+ "mmol/L";
+                //html += "Pro:" + data.pro
+                //    + ",Glu:" + data.glu
+                //    + ",镜检:" + data.jinjian
+                //    + ",KET:" + data.KET+ "mmol/L";
+                html+="<tr><td>Pro</td><td>"+data.pro +"</td><td></td></tr>"
+                    +"<tr><td>Glu</td><td>"+data.glu +"</td><td></td></tr>"
+                    +"<tr><td>镜检</td><td>"+data.jinjian +"</td><td></td></tr>"
+                    +"<tr><td>KET</td><td>"+data.KET +"mmol/L</td><td></td></tr>"
+                    +"</table>";
+
                 break;
             case "血脂":
-
-               // html += "TC:" + data.tc + "mmol/L " + labCcheck(type, "tc", data.tc) + ",TG:" + data.tg + "mmol/L " + labCcheck(type, "tg", data.tg) + ",LDL-C:" + data.ldlc + "mmol/L " + labCcheck(type, "ldlc", data.ldlc) + ",HDL-C:" + data.hdlc + "mmol/L " + labCcheck(type, "hdlc", data.hdlc) + ",LP-a:" + data.lpa + ",HDL/TC:" + data.hdltc + " " + labCcheck(type, "hdltc", data.hdltc);
+                // html += "TC:" + data.tc + "mmol/L " + labCcheck(type, "tc", data.tc) + ",TG:" + data.tg + "mmol/L " + labCcheck(type, "tg", data.tg) + ",LDL-C:" + data.ldlc + "mmol/L " + labCcheck(type, "ldlc", data.ldlc) + ",HDL-C:" + data.hdlc + "mmol/L " + labCcheck(type, "hdlc", data.hdlc) + ",LP-a:" + data.lpa + ",HDL/TC:" + data.hdltc + " " + labCcheck(type, "hdltc", data.hdltc);
                 html+="<tr><td>TC</td><td>"+data.tc +" mmol/L</td><td>"+labCcheck(type, 'tc', data.tc)+"</td></tr>"
                      +"<tr><td>TG</td><td>"+data.tg +" mmol/L</td><td>"+labCcheck(type, 'tg', data.tg)+"</td></tr>"
                         +"<tr><td>LDL-C</td><td>"+data.ldlc +" mmol/L</td><td>"+labCcheck(type, 'ldlc', data.ldlc)+"</td></tr>"
