@@ -8,14 +8,22 @@ router.get('/', function (req, res1, next) {
     var recordid=req.query.ReportId;
     var type=req.query.type;
     var userid=req.query.userid;
+    var typename=req.query.typename;
+    var checktime=req.query.checktime;
     var url='http://123.57.143.76:8010/api/qq/Reportsdetial?recordid='+recordid+'&&type='+type+'&&userid='+userid;
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var date=JSON.parse(body);
             detial = null;
             detial = date.results;
-            console.log("detial: \n"+body);
-            res1.render('lab',{title: '我的列表', detial: detial});
+            access=JSON.stringify(detial);
+            console.log("detial-body: \n"+body);
+            console.log("access: \n"+access);
+            if (type==0){
+                res1.render('lab',{title: '实验室报告', detial: detial});
+            }else{
+                res1.render('assess',{title: '心肺评估', access: access,typename:typename,checktime:checktime});
+            }
         }
     });
 

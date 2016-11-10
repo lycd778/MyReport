@@ -11,8 +11,9 @@ router.get('/', function (req, res1, next) {
         if (!error && response.statusCode == 200) {
             list = null;
             var date=JSON.parse(body);
+            console.log("list-body: \n"+body);
             list = date.results;
-            res1.render('index', {title: '我的报告', list: list});
+            res1.render('list', {title: '我的报告', list: list});
         }
     });
 });
