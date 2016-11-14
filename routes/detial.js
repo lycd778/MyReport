@@ -17,8 +17,6 @@ router.get('/', function (req, res1, next) {
             detial = null;
             detial = date.results;
             access=JSON.stringify(detial);
-            console.log("detial-body: \n"+body);
-            console.log("access: \n"+access);
             if (type==0){
                 res1.render('lab',{title: '实验室报告', detial: detial});
             }else{
