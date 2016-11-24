@@ -34,9 +34,15 @@
                             function (data) {
                                 var status = data.status;
                                 if (status=="103"){
-                                    alert("绑定成功");
+                                    var phone=$("#telephone").val();
+                                    var openid1=$("#openid").val();
+                                    var openid=openid1.replace(/\//g, '');
+                                    $.get('/updatephone?phone='+phone+'&openid='+openid,function(data,status){
+                                        alert("绑定成功");
+                                        WeixinJSBridge.call('closeWindow');
+                                    });
                                 }else {
-                                    alert("绑定失败");
+                                        alert("绑定失败");
                                 }
                             });
                     }

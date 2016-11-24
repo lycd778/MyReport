@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var list = require('./routes/list');
 var detial = require('./routes/detial');
 var binding = require('./routes/binding');
+var updatephone=require('./routes/updatephone')
 var app = express();
 
 // view engine setup
@@ -22,8 +23,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', list);
-app.use('/users', detial);
+app.use('/detial', detial);
 app.use('/binding', binding);
+app.use('/updatephone', updatephone);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

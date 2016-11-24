@@ -202,7 +202,7 @@ function LabJsonFormatter(type, value) {
                 //    + ',CK:' + data.CK + 'U/L ' + labCcheck(type, "CK", data.CK)
                 //    + ',CK-MB:' + data.CKMB + 'U/L ' + labCcheck(type, "CKMB", data.CKMB)
                 //    + ',Mb:' + data.Mb + 'ug/L ' + labCcheck(type, "Mb", data.Mb);
-                html += "<tr><td>LDH</td><td>" + data.LDH + " U/LL</td><td>" + labCcheck(type, 'LDH', data.LDH) + "</td></tr>"
+                html += "<tr><td>LDH</td><td>" + data.LDH + " U/L</td><td>" + labCcheck(type, 'LDH', data.LDH) + "</td></tr>"
                     + "<tr><td>CK</td><td>" + data.CK + " U/L</td><td>" + labCcheck(type, 'CK', data.CK) + "</td></tr>"
                     + "<tr><td>CK-MB</td><td>" + data.CKMB + " U/L</td><td>" + labCcheck(type, 'CKMB', data.CKMB) + "</td></tr>"
                     + "<tr><td>Mb</td><td>" + data.Mb + " ug/L</td><td>" + labCcheck(type, 'Mb', data.Mb) + "</td></tr>"
@@ -248,21 +248,21 @@ function LabJsonFormatter(type, value) {
             case "冠脉造影":
                 //html += getSummary(data);
                 html += "<tr><td>术前术后</td><td>" + data.checktime_type + "</td><td></td></tr>"
-                    + "<tr><td>LM</td><td>" + data.LM1 + "</td><td></td></tr>"
-                    + "<tr><td>LM远端</td><td>" + data.LM2 + "</td><td></td></tr>"
-                    + "<tr><td>LAD1</td><td>" + data.LAD1 + "</td><td></td></tr>"
-                    + "<tr><td>LAD2</td><td>" + data.LAD2 + "</td><td></td></tr>"
-                    + "<tr><td>LAD3</td><td>" + data.LAD3 + "</td><td></td></tr>"
-                    + "<tr><td>D1</td><td>" + data.D1 + "</td><td></td></tr>"
-                    + "<tr><td>D2</td><td>" + data.D2 + "</td><td></td></tr>"
-                    + "<tr><td>LCX1</td><td>" + data.LCX1 + "</td><td></td></tr>"
-                    + "<tr><td>LCX2</td><td>" + data.LCX2 + "</td><td></td></tr>"
-                    + "<tr><td>LCX3</td><td>" + data.LCX3 + "</td><td></td></tr>"
-                    + "<tr><td>RCA1</td><td>" + data.RCA1 + "</td><td></td></tr>"
-                    + "<tr><td>RCA2</td><td>" + data.RCA2 + "</td><td></td></tr>"
-                    + "<tr><td>RCA3</td><td>" + data.RCA3 + "</td><td></td></tr>"
-                    + "<tr><td>PD</td><td>" + data.PD + "</td><td></td></tr>"
-                    + "<tr><td>PL</td><td>" + data.PL + "</td><td></td></tr>"
+                    + "<tr><td>LM</td><td>" + data.LM1 + " %</td><td></td></tr>"
+                    + "<tr><td>LM远端</td><td>" + data.LM2 + " %</td><td></td></tr>"
+                    + "<tr><td>LAD1</td><td>" + data.LAD1 + " %</td><td></td></tr>"
+                    + "<tr><td>LAD2</td><td>" + data.LAD2 + " %</td><td></td></tr>"
+                    + "<tr><td>LAD3</td><td>" + data.LAD3 + " %</td><td></td></tr>"
+                    + "<tr><td>D1</td><td>" + data.D1 + " %</td><td></td></tr>"
+                    + "<tr><td>D2</td><td>" + data.D2 + " %</td><td></td></tr>"
+                    + "<tr><td>LCX1</td><td>" + data.LCX1 + " %</td><td></td></tr>"
+                    + "<tr><td>LCX2</td><td>" + data.LCX2 + " %</td><td></td></tr>"
+                    + "<tr><td>LCX3</td><td>" + data.LCX3 + " %</td><td></td></tr>"
+                    + "<tr><td>RCA1</td><td>" + data.RCA1 + " %</td><td></td></tr>"
+                    + "<tr><td>RCA2</td><td>" + data.RCA2 + " %</td><td></td></tr>"
+                    + "<tr><td>RCA3</td><td>" + data.RCA3 + " %</td><td></td></tr>"
+                    + "<tr><td>PD</td><td>" + data.PD + " %</td><td></td></tr>"
+                    + "<tr><td>PL</td><td>" + data.PL + " %</td><td></td></tr>"
                     + "<tr><td>介入治疗后TIMI分级</td><td>" + data.TIMI + "</td><td></td></tr>"
                     + "</table>";
                 break;

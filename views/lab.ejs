@@ -22,6 +22,9 @@
     </script>
 </head>
 <body>
+<%if (detial.type=="冠脉造影"){
+    detial.type="残余狭窄";
+}%>
 <h3><B><%=detial.type%>——<%=detial.checktime.substring(0,10)%></B></h3>
 <hr color=""/>
 <div id="show"></div>

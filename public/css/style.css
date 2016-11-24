@@ -14,12 +14,20 @@ hr{
 }
 .arrDown{
   font-weight:bold;
-  color: #00e12e;
+  color: #e10600;
 }
 .arrUp{
   font-weight:bold;
-  color: #ff0100;
+  color: #00ff18;
 }
 div.list-group {
   margin-top: 1rem;
+}
+div.col-xs-7{
+  padding-left: 0;
+  padding-right: 0;
+}
+div.col-xs-5{
+  padding-left: 0;
+  padding-right: 0;
 }
