@@ -6,8 +6,9 @@ var mysql = require('mysql');
 var router = express.Router();
 
 router.get('/', function (req, res1, next) {
-    var openid = req.query.openid;
-    console.log("openid: " + openid);
+    var openid1 = req.query.openid;
+    var openid = openid1.replace(/'/g,"");
+    console.log("new openid: " + openid);
     var phone = req.query.phone;
     console.log("phone: " + phone);
     var conn = mysql.createConnection({

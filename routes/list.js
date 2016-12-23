@@ -6,7 +6,7 @@ var request = require('request');
 
 router.get('/', function (req, res1, next) {
     var openid=req.query.openid;
-    var url = "http://123.57.143.76:8010/api/qq/Reportslist?openid="+openid;
+    var url = "http://heathcoudapi.xzkf365.com/api/qq/Reportslist?openid="+openid;
     console.log(url);
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {

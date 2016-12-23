@@ -10,6 +10,23 @@ var binding = require('./routes/binding');
 var updatephone=require('./routes/updatephone')
 var app = express();
 
+
+
+var log4js = require('log4js');
+log4js.configure("./log4js.json");
+var logInfo = log4js.getLogger('logInfo');
+
+console.log("log_start start!");
+logInfo.info("测试日志信息");
+logInfo.trace('This is a Log4js-Test');
+logInfo.debug('We Write Logs with log4js');
+logInfo.info('You can find logs-files in the log-dir');
+logInfo.warn('log-dir is a configuration-item in the log4js.json');
+logInfo.error('In This Test log-dir is : \'./logs/log_test/\'');
+
+console.log("log_start end!");
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

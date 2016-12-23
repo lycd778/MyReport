@@ -1,4 +1,5 @@
 body{
+    position: relative;
     background-image: url("/imgs/login_bg.png");
     background-size: cover
 }
@@ -71,7 +72,7 @@ body{
 .form-signin button {
   border-radius: 0;
 }
-#openid,#birthday,#password{
+#openid,#password{
     display:none;
 }
 .bindingTitle{

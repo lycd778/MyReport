@@ -10,7 +10,7 @@ router.get('/', function (req, res1, next) {
     var userid=req.query.userid;
     var typename=req.query.typename;
     var checktime=req.query.checktime;
-    var url='http://123.57.143.76:8010/api/qq/Reportsdetial?recordid='+recordid+'&&type='+type+'&&userid='+userid;
+    var url='http://heathcoudapi.xzkf365.com/api/qq/Reportsdetial?recordid='+recordid+'&&type='+type+'&&userid='+userid;
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var date=JSON.parse(body);
